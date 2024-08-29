@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Setup Guide
 
-## Getting Started
+## Installation Steps
 
-First, run the development server:
+1. **Clone the Project:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone https://github.com/sahilsuman933/HalesGlobal.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Navigate to project folder**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   cd HalesGlobal
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Install Dependencies:**
 
-## Learn More
+   Run the following command to install the required Node.js packages:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Create a `.env` File:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   In the root directory of the project, create a `.env` file and add the following environment variables:
 
-## Deploy on Vercel
+   ```bash
+   NEXT_PUBLIC_VAPI_PUBLIC_KEY=
+   NEXT_PUBLIC_VAPI_ASSISTANT_ID=
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   Make sure to replace the empty values with your actual keys and URLs.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. **Run the Project:**
+
+   Start the development server with:
+
+   ```bash
+   npm run dev
+   ```
+
+   - Go to `http://localhost:3000`
