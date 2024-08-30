@@ -42,3 +42,19 @@
    ```
 
    - Go to `http://localhost:3000`
+
+
+**Steps to upload it to server**
+
+1. Make changes in the code and then run these commands
+   a. git add .
+   b. git commit -m "matt is messing around!"
+   c. git push origin main
+
+2. Connect to the server by typing the command below shown
+   ```bash
+   sudo ssh -i ~/hales root@143.198.69.38
+   ```
+3. Go to HalesGlobal Folder by typing cd HalesGlobal and then type git pull origin main
+
+4. Type this command docker build -t halesglobal . to build the image and then run this command docker run -d -p 3000:3000 halesglobal to start the server and wohooo you have uploaded it to the server.
