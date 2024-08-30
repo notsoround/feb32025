@@ -48,7 +48,7 @@
 
 1. Make changes in the code and then run these commands
    a. git add .
-   b. git commit -m "matt is messing around!"
+   b. git commit -m "matt is messing around"
    c. git push origin main
 
 2. Connect to the server by typing the command below shown

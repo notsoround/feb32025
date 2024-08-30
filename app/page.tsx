@@ -11,7 +11,7 @@ export default function Home() {
     <main className="bg-black">
       <MatrixBackground>
         <div className="flex flex-col items-center justify-between md:px-24 lg:px-24 px-4 mb-5">
-          <h1 className="text-green-500 mt-20 md:text-5xl text-2xl">Hales io</h1>
+          <h1 className="text-green-500 mt-20 md:text-5xl text-2xl">Hales io Ai Sahil</h1>
           <div className="hover:cursor-pointer w-full h-full">
             <ParentComponent />
           </div>
