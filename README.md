@@ -43,63 +43,21 @@
 
    - Go to `http://localhost:3000`
 
-## Steps to upload it to server
+
+**Steps to upload it to server**
 
 1. Make changes in the code and then run these commands
-
-   ```bash
-   git add .
-   ```
-
-   ```bash
-   git commit -m "matt is messing around"
-   ```
-
-   ```bash
-   git push origin main
-   ```
+   a. git add .
+   b. git commit -m "matt is messing around"
+   c. git push origin main
 
 2. Connect to the server by typing the command below shown
-
    ```bash
    sudo ssh -i ~/hales root@143.198.69.38
    ```
+3. Go to HalesGlobal Folder by typing cd HalesGlobal and then type git pull origin main
 
-3. Go to HalesGlobal Folder by typing
+4. Type this command docker build -t halesglobal . to build the image and then run this command docker run -d -p 3000:3000 halesglobal to start the server and wohooo you have uploaded it to the server.
 
-   ```bash
-   cd HalesGlobal
-   ```
-
-   and then type
-
-   ```bash
-   git pull origin main
-   ```
-
-4. Then Type this `command`
-
-   ```bash
-   docker build -t halesglobal
-   ```
-
-   then run this `command`
-
-   ```bash
-   docker run -d -p 3000:3000 halesglobal
-   ```
-
-   to start the server and wohooo you have uploaded it to the server.
-
-   Make sure there is no previous container is running on `port 3000`.
-   To check run this `command`
-
-   ```bash
-   docker container ls
-   ```
-
-   if a container running on `port 3000`. To stop run this `command`
-
-   ```bash
-   docker stop <your-container-id>
-   ```
+Make sure to ensure there is no previous container is running, just type docker container ls 
+and stop the container which has port 3000 by this command docker stop container-id
