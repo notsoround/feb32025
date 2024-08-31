@@ -55,9 +55,10 @@
    ```bash
    sudo ssh -i ~/hales root@143.198.69.38
    ```
-3. Go to HalesGlobal Folder by typing cd HalesGlobal and then type git pull origin main
+3. Go to HalesGlobal Folder by typing `cd HalesGlobal` and then type `git pull origin main`
 
-4. Type this command docker build -t halesglobal . to build the image and then run this command docker run -d -p 3000:3000 halesglobal to start the server and wohooo you have uploaded it to the server.
+4. Make sure to ensure there is no previous container is running, just type `docker container ls` 
+and stop the container which has port 3000 by this command `docker stop ${container-id}`
 
-Make sure to ensure there is no previous container is running, just type docker container ls 
-and stop the container which has port 3000 by this command docker stop container-id
+5. Type this command `docker build -t halesglobal .` to build the image and then run this command `docker run -d -p 3000:3000 halesglobal` to start the server and wohooo you have uploaded it to the server.
+
