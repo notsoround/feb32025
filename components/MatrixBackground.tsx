@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react';
 
 interface MatrixBackgroundProps {
     children: React.ReactNode;
@@ -25,31 +25,54 @@ export const MatrixBackground: React.FC<MatrixBackgroundProps> = ({ children }) 
 
         resizeCanvas();
 
-        const columns = canvas.width / 20;
-        const drops: number[] = [];
+        const particles: { 
+            x: number; 
+            y: number; 
+            radius: number; 
+            speedX: number; 
+            speedY: number; 
+            alpha: number; 
+            color: string;
+        }[] = [];
 
-        for (let i = 0; i < columns; i++) {
-            drops[i] = 1;
+        const colors = ['#41a1e0', '#7efcf6', '#30c89e', '#1f78b4', '#00ccff'];
+
+        for (let i = 0; i < 100; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2 + 1,
+                speedX: Math.random() * 0.5 - 0.25,
+                speedY: Math.random() * 0.5 - 0.25,
+                alpha: Math.random(),
+                color: colors[Math.floor(Math.random() * colors.length)],
+            });
         }
 
         const draw = () => {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+            ctx.fillStyle = 'rgba(16, 16, 16, 0.95)'; // Keep background close to black but not pure black
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            ctx.fillStyle = '#0f0';
-            ctx.font = '15px monospace';
-
-            for (let i = 0; i < drops.length; i++) {
-                const text = String.fromCharCode(Math.random() * 128);
-                ctx.fillText(text, i * 20, drops[i] * 20);
-
-                if (drops[i] * 20 > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-
-                drops[i] += 0.5;
-            }
+        
+            particles.forEach(particle => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        
+                // Adjust the fillStyle to be brighter and more opaque
+                ctx.fillStyle = 'rgba(100, 200, 255, 0.8)'; // Light blue, higher opacity
+                ctx.fill();
+        
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+        
+                if (particle.x > canvas.width) particle.x = 0;
+                if (particle.x < 0) particle.x = canvas.width;
+                if (particle.y > canvas.height) particle.y = 0;
+                if (particle.y < 0) particle.y = canvas.height;
+            });
         };
+        
 
         const interval = setInterval(draw, 33);
 

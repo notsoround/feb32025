@@ -58,6 +58,25 @@
     --chart-5: 340 75% 55%;
   }
 }
+.gradient-text {
+  background: linear-gradient(90deg, #41a1e0, #7efcf6, #30c89e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+@layer base {
+  .bg-black {
+    background-color: #000000 !important; /* Very dark gray, almost black */
+  }
+}
+
+
+.bg-transparent {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
+  backdrop-filter: blur(10px); /* Adds the blur effect */
+}
+
 
 @layer base {
   * {
