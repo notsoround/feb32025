@@ -11,7 +11,7 @@ export default function Home() {
     <div className="relative">
       <MatrixBackground>
         <div className="relative z-10">
-        <main className="bg-almost-black">
+        <main className="bg-none">
             <div className="flex flex-col items-center justify-between md:px-24 lg:px-24 px-4 mb-5">
               <h1 className="gradient-text mt-20 md:text-5xl text-2xl">Hales Ai</h1>
               <div className="hover:cursor-pointer w-full h-full">
