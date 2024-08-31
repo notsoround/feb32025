@@ -30,7 +30,7 @@ export default function AiCard({ name, role, imageUrl }: CardProps) {
                     <Image
                         src={imageUrl}
                         alt={name}
-                        className="w-full h-full"
+                        className="w-full h-full object-cover"
                         width={100}
                         height={100}
                         priority
