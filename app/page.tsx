@@ -84,7 +84,7 @@ export default function Home() {
                 name="Brutal Bot"
               />
               <footer className="text-center py-4 text-white">
-                <p>Hales.Ai &copy; 2024</p>
+              <p className="gradient-text text-base">Hales.Ai &copy; 2024</p>
               </footer>
             </div>
           </main>
