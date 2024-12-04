@@ -52,9 +52,9 @@
    c. git push origin main
 
 2. Connect to the server by typing the command below shown
-   ```bash
-   sudo ssh -i ~/hales root@143.198.69.38
-   ```
+
+   ssh root@143.198.69.38
+   
 3. Go to HalesGlobal Folder by typing `cd HalesGlobal` and then type `git pull origin main`
 
 4. Make sure to ensure there is no previous container is running, just type `docker container ls` 
