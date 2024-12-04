@@ -79,7 +79,7 @@ export default function Home() {
                 name="Phil Extreme"
               />
               <AiCard
-                imageUrl="/brutal.webp"
+                imageUrl="/brutal.jpeg"
                 role="Ai  Zero Tolerance Expert"
                 name="Brutal Bot"
               />
