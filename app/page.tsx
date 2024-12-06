@@ -80,9 +80,9 @@ export default function Home() {
               />
               <AiCard
                 imageUrl="/brutal.jpeg"
-                role="Ai  Zero Tolerance Expert"
+                role="Ai Anything Goes Bot! 0 Guard rails"
                 name="Brutal Bot"
-              />
+              /> 
               <footer className="text-center py-4 text-white">
               <p className="gradient-text text-base">Hales.Ai &copy; 2024</p>
               </footer>
