@@ -58,6 +58,7 @@
     --chart-5: 340 75% 55%;
   }
 }
+
 .gradient-text {
   background: linear-gradient(90deg, #41a1e0, #7efcf6, #30c89e);
   -webkit-background-clip: text;
@@ -65,18 +66,18 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+
 @layer base {
   .bg-black {
-    background-color: #000000 !important; /* Very dark gray, almost black */
+    background-color: #000000 !important;
   }
 }
 
-
 .bg-transparent {
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency as needed */
-  backdrop-filter: blur(10px); /* Adds the blur effect */
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
-
 
 @layer base {
   * {
@@ -85,4 +86,30 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.social-feeds-section {
+  width: 100%;
+  position: relative;
+  z-index: 20;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

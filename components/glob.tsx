@@ -89,6 +89,7 @@ const AbstractBall: React.FC<AbstractBallProps> = ({
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(width, height);
     renderer.shadowMap.enabled = true;
+    renderer.domElement.style.pointerEvents = 'none';
 
     mountRef.current!.appendChild(renderer.domElement);
 

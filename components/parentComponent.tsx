@@ -51,7 +51,11 @@ const ParentComponent: React.FC = () => {
     }, [isSessionActive, volumeLevel]);
 
     return (
-        <div className='w-full h-full' onClick={toggleCall}>
+        <div 
+            onClick={toggleCall} 
+            style={{ cursor: 'pointer', height: '500px' }} 
+            className="flex items-center justify-center hover:opacity-90 active:opacity-80"
+        >
             <AbstractBall {...config} />
         </div>
     );

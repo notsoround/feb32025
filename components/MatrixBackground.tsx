@@ -89,8 +89,8 @@ export const MatrixBackground: React.FC<MatrixBackgroundProps> = ({ children }) 
     }, []);
 
     return (
-        <div ref={containerRef} className="relative w-full h-full min-h-screen">
-            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+        <div ref={containerRef} className="relative w-full min-h-screen">
+            <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none" />
             <div className="relative z-10">{children}</div>
         </div>
     );

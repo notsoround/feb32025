@@ -1,28 +1,28 @@
 import Image from "next/image";
 import ParentComponent from "@/components/parentComponent";
 import AiCard from "@/components/ai-card";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { MatrixBackground } from "@/components/MatrixBackground";
+import SoundButtons from "@/components/sound-buttons";
+import SocialFeeds from "@/components/social-feeds";
 
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <MatrixBackground>
-        <div className="relative z-10">
-          <main className="bg-none">
-            <div className="flex flex-col items-center justify-between md:px-24 lg:px-24 px-4 mb-5">
+        <div className="relative z-10 pointer-events-auto">
+          <main className="bg-none pb-8">
+            <div className="flex flex-col items-center md:px-24 lg:px-24 px-4 mb-5">
               <h1 className="gradient-text mt-20 md:text-5xl text-2xl">Hales Ai.</h1>
-              <div className="hover:cursor-pointer w-full h-full">
+              <div className="hover:cursor-pointer w-full relative z-20 pointer-events-auto mb-20">
                 <ParentComponent />
               </div>
-              <div className="text-white flex flex-col gap-5 text-center my-5">
-                <p className="gradient-text lg:text-xl text-base">Meet Our Team Of Ai Expert Agents</p>
-                <p className="gradient-text text-base">Each member is dedicated to providing top-notch services and solutions. From counseling to translation, our agents excel in various tasks.</p>
+              <div className="text-white flex flex-col gap-5 text-center my-5 mb-10">
+                <p className="gradient-text lg:text-xl text-base pointer-events-none">Meet Our Team Of Ai Expert Agents</p>
+                <p className="gradient-text text-base pointer-events-none">Each member is dedicated to providing top-notch services and solutions. From counseling to translation, our agents excel in various tasks.</p>
               </div>
+              <SoundButtons />
             </div>
-            <div className="md:px-24 lg:px-24 px-4 py-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="container mx-auto px-4 md:px-24 lg:px-24 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
               <AiCard
                 imageUrl="/ivonna.png"
                 role="Ai Tech Innovator Fire & Safety"
@@ -83,10 +83,11 @@ export default function Home() {
                 role="Ai Anything Goes Bot! 0 Guard rails"
                 name="Brutal Bot"
               /> 
-              <footer className="text-center py-4 text-white">
-              <p className="gradient-text text-base">Hales.Ai &copy; 2024</p>
-              </footer>
             </div>
+            <div className="w-full"><SocialFeeds /></div>
+            <footer className="text-center py-4 text-white">
+              <p className="gradient-text text-base">Hales.Ai &copy; 2024</p>
+            </footer>
           </main>
         </div>
       </MatrixBackground>
