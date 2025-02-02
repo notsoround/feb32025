@@ -10,8 +10,8 @@ export default function SoundButtons() {
   const clickSound = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    hoverSound.current = new Audio('/Hales-Ai_Quantum_Code/sounds/hover_sound.mp3');
-    clickSound.current = new Audio('/Hales-Ai_Quantum_Code/sounds/on_click_sound.mp3');
+    hoverSound.current = new Audio('/hover_sound.mp3');
+    clickSound.current = new Audio('/on_click_sound.mp3');
   }, []);
 
   const playHoverSound = () => {
@@ -29,7 +29,7 @@ export default function SoundButtons() {
   };
 
   return (
-    <div className="fixed bottom-10 left-1/2 -translate-x-1/2 flex justify-center py-6 px-8 bg-black/50 rounded-xl z-50">
+    <div className="fixed bottom-0 left-0 right-0 flex justify-center py-4 bg-black/80 backdrop-blur-sm z-[999999] border-t border-[#30c89e]/20">
       <div className="flex gap-6 items-center pointer-events-auto">
         <Link href="/matts-tasklist">
           <Button 

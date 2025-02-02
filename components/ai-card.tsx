@@ -23,8 +23,8 @@ interface CardProps {
 
 export default function AiCard({ name, role, imageUrl }: CardProps) {
     return (
-        <Card className="w-full max-w-3xl text-white overflow-hidden border-0 rounded-none bg-transparent">
-            <CardContent className="p-0 flex" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+        <Card className="w-full max-w-3xl text-white overflow-hidden border border-[#30c89e] rounded-lg bg-black/50 hover:border-[#41a1e0] transition-all duration-300 shadow-lg shadow-black/20">
+            <CardContent className="p-0 flex backdrop-blur-sm">
                 {/* Image section */}
                 <div className="w-1/2 h-80">
                     <Image

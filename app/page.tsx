@@ -2,7 +2,6 @@ import Image from "next/image";
 import ParentComponent from "@/components/parentComponent";
 import AiCard from "@/components/ai-card";
 import { MatrixBackground } from "@/components/MatrixBackground";
-import SoundButtons from "@/components/sound-buttons";
 import SocialFeeds from "@/components/social-feeds";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
                 <p className="gradient-text lg:text-xl text-base pointer-events-none">Meet Our Team Of Ai Expert Agents</p>
                 <p className="gradient-text text-base pointer-events-none">Each member is dedicated to providing top-notch services and solutions. From counseling to translation, our agents excel in various tasks.</p>
               </div>
-              <SoundButtons />
             </div>
             <div className="container mx-auto px-4 md:px-24 lg:px-24 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-16">
               <AiCard

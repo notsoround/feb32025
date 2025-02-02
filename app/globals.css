@@ -67,6 +67,15 @@
   text-fill-color: transparent;
 }
 
+.gradient-text::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #41a1e0, #7efcf6, #30c89e);
+  margin-top: 4px;
+}
+
 @layer base {
   .bg-black {
     background-color: #000000 !important;

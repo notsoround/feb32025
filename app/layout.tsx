@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import SoundButtons from "@/components/sound-buttons";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -152,7 +153,12 @@ export default function RootLayout({
             }
           `
         }} />
-        {children}
+        <div className="relative min-h-screen pb-16">
+          {children}
+        </div>
+        <div className="fixed bottom-0 left-0 right-0 z-[999999]">
+          <SoundButtons />
+        </div>
       </body>
     </html>
   );

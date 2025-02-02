@@ -16,8 +16,9 @@ const useVapi = () => {
     const initializeVapi = useCallback(() => {
         try {
             if (!vapiRef.current) {
-                console.log('Initializing Vapi with:', { publicKey, assistantId });
+                console.log('Initializing Vapi with config:', { publicKey, assistantId });
                 const vapiInstance = new Vapi(publicKey);
+                console.log('Vapi instance created successfully');
                 vapiRef.current = vapiInstance;
 
                 vapiInstance.on('call-start', () => {
@@ -36,7 +37,7 @@ const useVapi = () => {
                 });
 
                 vapiInstance.on('message', (message: any) => {
-                    console.log('Vapi message:', message);
+                    console.log('Vapi message received:', message);
                     if (message.type === 'transcript' && message.transcriptType === 'final') {
                         setConversation((prev) => [
                             ...prev,
@@ -46,11 +47,20 @@ const useVapi = () => {
                 });
 
                 vapiInstance.on('error', (e: Error) => {
-                    console.error('Vapi error:', e);
+                    console.error('Vapi error details:', {
+                        message: e.message,
+                        stack: e.stack,
+                        name: e.name
+                    });
                 });
             }
         } catch (error) {
-            console.error('Error initializing Vapi:', error);
+            const err = error as Error;
+            console.error('Error initializing Vapi:', {
+                message: err.message,
+                stack: err.stack,
+                name: err.name
+            });
         }
     }, []);
 
@@ -68,13 +78,16 @@ const useVapi = () => {
 
     const toggleCall = async () => {
         try {
-            console.log('Toggle call clicked, current state:', { isSessionActive, vapiInstance: vapiRef.current });
+            console.log('Toggle call clicked, current state:', {
+                isSessionActive,
+                hasVapiInstance: !!vapiRef.current
+            });
             
             if (!vapiRef.current) {
                 console.log('No Vapi instance found, reinitializing');
                 initializeVapi();
                 // Wait a bit for initialization
-                await new Promise(resolve => setTimeout(resolve, 100));
+                await new Promise(resolve => setTimeout(resolve, 500));
             }
 
             if (!vapiRef.current) {
@@ -85,11 +98,17 @@ const useVapi = () => {
                 console.log('Stopping Vapi call');
                 await vapiRef.current.stop();
             } else {
-                console.log('Starting Vapi call with assistant:', assistantId);
+                console.log('Attempting to start Vapi call with assistant:', assistantId);
                 await vapiRef.current.start(assistantId);
+                console.log('Vapi call started successfully');
             }
         } catch (err) {
-            console.error('Error toggling Vapi session:', err);
+            const error = err as Error;
+            console.error('Error toggling Vapi session:', {
+                message: error.message,
+                stack: error.stack,
+                name: error.name
+            });
         }
     };
 
