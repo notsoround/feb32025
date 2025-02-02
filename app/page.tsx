@@ -80,6 +80,12 @@ export default function Home() {
                 imageUrl="/brutal.jpeg"
                 role="Ai Anything Goes Bot! 0 Guard rails"
                 name="Brutal Bot"
+              />
+              <AiCard
+                imageUrl="/ivonna.png"
+                role="Realtime Voice ChatGPT"
+                name="Voice Assistant"
+                link="/chat"
               /> 
             </div>
             <div className="w-full"><SocialFeeds /></div>
