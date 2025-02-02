@@ -96,8 +96,8 @@ const AbstractBall: React.FC<AbstractBallProps> = ({
     // Geometry and Material
     const geometry = new THREE.IcosahedronGeometry(20, 20);
 
-    const vertexShader = document.getElementById('noiseVertexShader')!.textContent!;
-    const fragmentShader = document.getElementById('fragmentShader')!.textContent!;
+    const vertexShader = document.getElementById('noiseVertexShader')?.textContent || '';
+    const fragmentShader = document.getElementById('fragmentShader')?.textContent || '';
 
     const material = new THREE.ShaderMaterial({
       uniforms: uniformsRef.current,
