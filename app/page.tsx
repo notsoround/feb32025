@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import ParentComponent from "@/components/parentComponent";
 import AiCard from "@/components/ai-card";
 import { MatrixBackground } from "@/components/MatrixBackground";
@@ -12,6 +13,11 @@ export default function Home() {
           <main className="bg-none pb-8">
             <div className="flex flex-col items-center md:px-24 lg:px-24 px-4 mb-5">
               <h1 className="gradient-text mt-20 md:text-5xl text-2xl">Hales Ai.</h1>
+              <Link href="/elite-ops" className="mt-4 mb-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-lg 
+                hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/50">
+                Elite Ops Unit
+              </Link>
+
               <div className="hover:cursor-pointer w-full relative z-20 pointer-events-auto mb-20">
                 <ParentComponent />
               </div>
@@ -85,7 +91,7 @@ export default function Home() {
                 imageUrl="/ivonna.png"
                 role="Realtime Voice ChatGPT"
                 name="Voice Assistant"
-                link="/chat"
+                link="/realtime-chat"
               /> 
             </div>
             <div className="w-full"><SocialFeeds /></div>
